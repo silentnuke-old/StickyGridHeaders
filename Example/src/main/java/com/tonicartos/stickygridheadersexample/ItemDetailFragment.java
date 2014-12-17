@@ -25,8 +25,8 @@ import android.widget.TextView;
 
 /**
  * A fragment representing a single Item detail screen. This fragment is either
- * contained in a {@link ItemListActivity} in two-pane mode (on tablets) or a
- * {@link ItemDetailActivity} on handsets.
+ * contained in a {@link com.tonicartos.stickygridheadersexample.ItemListActivity} in two-pane mode (on tablets) or a
+ * {@link com.tonicartos.stickygridheadersexample.ItemDetailActivity} on handsets.
  * 
  * @author Tonic Artos
  */

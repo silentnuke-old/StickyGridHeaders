@@ -559,20 +559,20 @@ public class StickyGridHeadersGridView extends GridView implements OnScrollListe
     }
 
     @Override
-    public void setOnItemClickListener(android.widget.AdapterView.OnItemClickListener listener) {
+    public void setOnItemClickListener(OnItemClickListener listener) {
         this.mOnItemClickListener = listener;
         super.setOnItemClickListener(this);
     }
 
     @Override
     public void setOnItemLongClickListener(
-            android.widget.AdapterView.OnItemLongClickListener listener) {
+            OnItemLongClickListener listener) {
         this.mOnItemLongClickListener = listener;
         super.setOnItemLongClickListener(this);
     }
 
     @Override
-    public void setOnItemSelectedListener(android.widget.AdapterView.OnItemSelectedListener listener) {
+    public void setOnItemSelectedListener(OnItemSelectedListener listener) {
         this.mOnItemSelectedListener = listener;
         super.setOnItemSelectedListener(this);
     }
@@ -1186,7 +1186,7 @@ public class StickyGridHeadersGridView extends GridView implements OnScrollListe
      * Constructor called from {@link #CREATOR}
      */
     static class SavedState extends BaseSavedState {
-        public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {
+        public static final Creator<SavedState> CREATOR = new Creator<SavedState>() {
             @Override
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);

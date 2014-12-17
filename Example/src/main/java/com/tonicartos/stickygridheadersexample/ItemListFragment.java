@@ -45,9 +45,9 @@ import android.widget.Toast;
  * A list fragment representing a list of Items. This fragment also supports
  * tablet devices by allowing list items to be given an 'activated' state upon
  * selection. This helps indicate which item is currently being viewed in a
- * {@link ItemDetailFragment}.
+ * {@link com.tonicartos.stickygridheadersexample.ItemDetailFragment}.
  * <p>
- * Activities containing this fragment MUST implement the {@link Callbacks}
+ * Activities containing this fragment MUST implement the {@link com.tonicartos.stickygridheadersexample.ItemListFragment.Callbacks}
  * interface.
  * 
  * @author Tonic Artos
@@ -57,7 +57,7 @@ public class ItemListFragment extends Fragment implements OnItemClickListener,
     private static final String KEY_LIST_POSITION = "key_list_position";
 
     /**
-     * A dummy implementation of the {@link Callbacks} interface that does
+     * A dummy implementation of the {@link com.tonicartos.stickygridheadersexample.ItemListFragment.Callbacks} interface that does
      * nothing. Used only when this fragment is not attached to an activity.
      */
     private static Callbacks sDummyCallbacks = new Callbacks() {
