@@ -33,6 +33,7 @@ import android.os.Handler;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.util.SparseBooleanArray;
 import android.view.HapticFeedbackConstants;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
@@ -500,6 +501,27 @@ public class StickyGridHeadersGridView extends GridView implements OnScrollListe
         this.mAdapter.registerDataSetObserver(mDataSetObserver);
         reset();
         super.setAdapter(this.mAdapter);
+    }
+
+    @Override
+    public SparseBooleanArray getCheckedItemPositions() {
+        SparseBooleanArray positions = super.getCheckedItemPositions();
+        SparseBooleanArray translated = new SparseBooleanArray();
+
+        final int total = positions.size();
+        for (int i = 0; i < total; i++) {
+            int key = positions.keyAt(i);
+            boolean value = positions.valueAt(i);
+
+            translated.put(mAdapter.translatePosition(key).mPosition, value);
+        }
+
+        return translated;
+    }
+
+    @Override
+    public void setItemChecked(int position, boolean value) {
+        super.setItemChecked(mAdapter.inverseTranslatePosition(position), value);
     }
 
     public void setAreHeadersSticky(boolean useStickyHeaders) {
