@@ -19,3 +19,5 @@ android {
 dependencies {
     compile 'com.android.support:support-v4:21.0.3'
 }
+
+apply from: "${rootDir}/gradle/scripts/gradle-mvn-push.gradle"
