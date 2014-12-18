@@ -506,8 +506,11 @@ public class StickyGridHeadersGridView extends GridView implements OnScrollListe
     @Override
     public SparseBooleanArray getCheckedItemPositions() {
         SparseBooleanArray positions = super.getCheckedItemPositions();
-        SparseBooleanArray translated = new SparseBooleanArray();
+        if (positions == null || positions.size() == 0) {
+            return positions;
+        }
 
+        SparseBooleanArray translated = new SparseBooleanArray();
         final int total = positions.size();
         for (int i = 0; i < total; i++) {
             int key = positions.keyAt(i);
